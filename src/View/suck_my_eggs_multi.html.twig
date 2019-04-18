@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Eggs Fight!! {% endblock %}
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+{% for egg in eggs %}
+                <div class="col-3">
+                    <h1>Gueule de l'oeuf: </h1>
+                    <img src="{{ egg.image }}" style="height: 300px; width: 300px">
+                    <h1>Nom:</h1>
+                    <p>{{ egg.name }}</p>
+                    <h1>Rareté:</h1>
+                    <p>{{ egg.rarity }}</p>
+                    <h1>Pouvoir:</h1>
+                    <p>{{ egg.power }}</p>
+
+                    <h1>Couleur: </h1>
+                    <div style="width: 50px;height: 50px;background-color: {{ egg.color }}"></div>
+                </div>
+{% endfor %}
+
+            </div>
+
+    </div>
+{% endblock %}
